@@ -21,7 +21,7 @@ function showError(input, message) {
     const formControl = input.parentElement;
     const errorElement = formControl.querySelector('.error') || document.createElement('div');
 
-    errorElement.className == 'error'
+    errorElement.className = 'error';
     errorElement.textContent = message;
 
     formControl.appendChild(errorElement);
@@ -32,7 +32,7 @@ function showError(input, message) {
 function removeError(input) {
     const formControl = input.parentElement;
     const errorElement = formControl.querySelector('.error');
-
+    console.log('fsdf')
     if (errorElement)
     {
         formControl.removeChild(errorElement);
