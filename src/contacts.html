@@ -43,22 +43,22 @@
         <!-- Секция с формой обратной связи -->
         <section>
             <h2>Обратная связь</h2>
-            <form>
+            <form id="contactform">
                 <p>
                     <label for="name">Ваше имя:</label><br>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" required>
                 </p>
                 <p>
                     <label for="email">Ваш email:</label><br>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" required>
                 </p>
                 <p>
-                    <label for="number">Ваш номер</label>:</label><br>
-                    <input id="number" name="number" rows="4"></textarea>
+                    <label for="number">Ваш номер:</label></label><br>
+                    <input id="number" name="number" rows="4" required></textarea>
                 </p>
                 <p>
                     <label for="message">Сообщение:</label><br>
-                    <textarea id="message" name="message" rows="4"></textarea>
+                    <textarea id="message" name="message" rows="4" required></textarea>
                     <button type="submit">Отправить</button>
 
                 </p>

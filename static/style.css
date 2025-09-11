@@ -42,3 +42,11 @@ button:hover {
     background-color: #7d007d;
     color: #fff;
 }
+
+#contactform {
+    border: 3px solid blueviolet;
+    border-radius: 10px;
+    background-color: honeydew;
+    padding: 10px;
+    max-width: 250px;
+}
