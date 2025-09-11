@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты - Название вашего сайта</title>
     <meta name="description" content="Контактная информация и форма обратной связи">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../пара 1/src/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <!-- Шапка сайта -->
@@ -52,8 +53,14 @@
                     <input type="email" id="email" name="email">
                 </p>
                 <p>
+                    <label for="number">Ваш номер</label>:</label><br>
+                    <input id="number" name="number" rows="4"></textarea>
+                </p>
+                <p>
                     <label for="message">Сообщение:</label><br>
                     <textarea id="message" name="message" rows="4"></textarea>
+                    <button type="submit">Отправить</button>
+
                 </p>
                 <p>
                     <label for="cource">Ваш курс:</label>
@@ -64,9 +71,6 @@
                         <option value="4">4 курс</option>
                         <option value="other">Другое</option>
                     </select>
-                </p>    
-                <p>
-                    <button type="submit">Отправить</button>
                 </p>
             </form>
         </section>
