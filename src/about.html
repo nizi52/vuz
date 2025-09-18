@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    ... <!-- Скопируйте весь блок <head> из index.html -->
     <title>О нас - Название вашего сайта</title>
     <meta name="description" content="Узнайте больше о нашей компании и истории">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+        <script defer>
+            const KEY='theme', btn=document.querySelector('.theme-toggle');
+            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+            if(localStorage.getItem(KEY)==='dark' || (!localStorage.getItem(KEY) && 
+        prefersDark)){
+            document.body.classList.add('theme-dark');
+            btn?.setAttribute('aria-pressed','true');
+        }
+        btn?.addEventListener('click', ()=>{
+            const isDark=document.body.classList.toggle('theme-dark');
+            btn.setAttribute('aria-pressed', String(isDark));
+            localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+        });
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>О нас - Название вашего сайта</title>

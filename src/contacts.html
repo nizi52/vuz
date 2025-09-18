@@ -8,11 +8,24 @@
     <link rel="icon" href="../пара 1/src/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/style.css">
 </head>
-<body>
+<body style="background-image: linear-gradient(135deg, var(--grad-bg1), var(--grad-bg2), var(--grad-bg3))">
     <!-- Шапка сайта -->
     <header>
-        <a href="/">Логотип или название сайта</a>
-        <!-- Главное меню навигации -->
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+        <script defer>
+            const KEY='theme', btn=document.querySelector('.theme-toggle');
+            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+            if(localStorage.getItem(KEY)==='dark' || (!localStorage.getItem(KEY) && 
+        prefersDark)){
+            document.body.classList.add('theme-dark');
+            btn?.setAttribute('aria-pressed','true');
+        }
+        btn?.addEventListener('click', ()=>{
+            const isDark=document.body.classList.toggle('theme-dark');
+            btn.setAttribute('aria-pressed', String(isDark));
+            localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+        });
+        </script>
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -56,8 +69,10 @@
                 <label for="message">Сообщение:</label><br>
                 <textarea id="message" name="message" rows="4" required></textarea>
                 
+                <label>Подтвердить</label>
                 <button type="submit">Отправить</button>
-                
+                <button type="reset">Очистить</button>
+
                 <label for="course">Ваш курс:</label>
                 <select id="course" name="course">  
                     <option value="1">1 курс</option>
